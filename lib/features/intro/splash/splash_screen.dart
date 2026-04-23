@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:se7ety/core/constants/user_type_enum.dart';
 import '../../../core/constants/app_images.dart';
 import '../../../core/routes/navigations.dart';
 import '../../../core/routes/routes.dart';
@@ -15,9 +18,20 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    String? userId = SharedPref.getUserId();
+    log(userId.toString());
+
     bool isOnboardingShown = SharedPref.isOnboardingShown();
+    bool isLoggedIn = SharedPref.isLoggedIn();
     Future.delayed(const Duration(seconds: 3)).then((value) {
-      if (isOnboardingShown) {
+      if (!mounted) return;
+      if (isLoggedIn) {
+        if (SharedPref.getData(SharedPref.userType) == UserTypeEnum.doctor.value) {
+          pushReplacement(context, Routes.doctorMainApp);
+        } else {
+          pushReplacement(context, Routes.patientMainApp);
+        }
+      } else if (isOnboardingShown) {
         pushReplacement(context, Routes.welcome);
       } else {
         pushReplacement(context, Routes.onboarding);

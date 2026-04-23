@@ -8,5 +8,8 @@ class Routes {
   static String login = '/login';
   static String register = '/register';
   static String welcome = '/welcome';
-  static String main = '/main';
+  static String patientMainApp = '/patientMainApp';
+  static String patientHomeView = '/patientHomeView';
+  static String doctorMainApp = '/doctorMainApp';
+  static String doctorUpdateProfile = '/doctorUpdateProfile';
 }

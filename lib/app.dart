@@ -2,9 +2,8 @@ import 'dart:io';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-
-import 'core/routes/app_router.dart';
-import 'core/utils/themes.dart';
+import 'package:se7ety/core/routes/app_router.dart';
+import 'package:se7ety/core/utils/themes.dart';
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});

@@ -72,7 +72,11 @@ class WelcomeScreen extends StatelessWidget {
                   _buildUserButton(
                     title: 'دكتور',
                     onTap: () {
-                      pushTo(context, Routes.login, extra: UserTypeEnum.doctor);
+                      pushTo(
+                        context,
+                        Routes.login,
+                        extra: UserTypeEnum.doctor,
+                      );
                     },
                   ),
                   const SizedBox(height: 15),

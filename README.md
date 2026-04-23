@@ -33,6 +33,10 @@
 |:---:|:---:|:---:|:---:|
 | <img src="assets\screenshots\login_doctor.png" width="180"/> | <img src="assets\screenshots\register_doctor.png" width="180"/> | <img src="assets\screenshots\login_patient.png" width="180"/> | <img src="assets\screenshots\register_patient.png" width="180"/> |
 
+### 🔹 Authentication
+| update profile doctor | home screen |
+|:---:|:---:|
+| <img src="assets\screenshots\update_profile.png" width="180"/> | <img src="assets\screenshots\home_screen.png" width="180"/> |
 
 ## 🛠 Tech Stack & Packages
 

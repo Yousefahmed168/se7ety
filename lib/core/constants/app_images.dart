@@ -9,4 +9,5 @@ abstract class AppImages {
   static const String noSearchSvg = 'assets/images/no-search.svg';
   static const String noScheduledSvg = 'assets/images/no_scheduled.svg';
   static const String backSvg = 'assets/icons/back.svg';
+  static const String loadingJson = 'assets/images/loading.json';
 }

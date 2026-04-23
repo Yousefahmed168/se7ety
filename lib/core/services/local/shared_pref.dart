@@ -4,7 +4,8 @@ abstract class SharedPref {
   static late SharedPreferences pref;
 
   static const String onboarding = 'onboarding';
-  static const String user = 'user';
+  static const String userId = 'user_id';
+  static const String userType = 'user_type';
 
   static Future<void> init() async {
     pref = await SharedPreferences.getInstance();
@@ -16,6 +17,18 @@ abstract class SharedPref {
 
   static bool isOnboardingShown() {
     return pref.getBool(onboarding) ?? false;
+  }
+
+  static Future<void> cacheUserId(String id) async {
+    await pref.setString(userId, id);
+  }
+
+  static bool isLoggedIn() {
+    return pref.getString(userId) != null && pref.getString(userId)!.isNotEmpty;
+  }
+
+  static String getUserId() {
+    return pref.getString(userId) ?? '';
   }
 
   static Future<void> cacheData(String key, dynamic value) async {

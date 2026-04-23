@@ -1,20 +1,20 @@
-import 'app.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
-import 'core/services/local/shared_pref.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
+import 'package:flutter/material.dart';
+import 'package:se7ety/app.dart';
+import 'package:se7ety/core/services/local/shared_pref.dart';
+import 'package:se7ety/firebase_options.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await SharedPref.init();
   await EasyLocalization.ensureInitialized();
+  await SharedPref.init();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(
     EasyLocalization(
-      supportedLocales: const [Locale('ar')],
+      supportedLocales: [Locale('ar')],
       path: 'assets/translations',
-      fallbackLocale: const Locale('ar'),
+      fallbackLocale: Locale('ar'),
       child: const MainApp(),
     ),
   );
