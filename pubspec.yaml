@@ -29,6 +29,7 @@ dependencies:
   cloudinary_api: ^1.1.1
   cloudinary_url_gen: ^1.8.0
   http: ^1.6.0
+  flutter_dotenv: ^6.0.1
 
 dev_dependencies:
   flutter_lints: ^6.0.0
@@ -42,6 +43,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/translations/
+    - .env
 
   fonts:
     - family: Cairo
