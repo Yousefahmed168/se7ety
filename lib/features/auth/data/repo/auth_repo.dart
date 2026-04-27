@@ -22,10 +22,8 @@ class AuthRepo {
 
       if (UserTypeEnum.fromString(user?.photoURL ?? '') ==
           UserTypeEnum.doctor) {
-        await SharedPref.cacheData(SharedPref.userType, UserTypeEnum.doctor.value);
         return right(UserTypeEnum.doctor);
       } else {
-        await SharedPref.cacheData(SharedPref.userType, UserTypeEnum.patient.value);
         return right(UserTypeEnum.patient);
       }
     } on FirebaseAuthException catch (e) {
@@ -53,9 +51,7 @@ class AuthRepo {
       await user?.updateDisplayName(params.name);
       await user?.updatePhotoURL(UserTypeEnum.doctor.value);
       await SharedPref.cacheUserId(user?.uid ?? '');
-      await SharedPref.cacheData(SharedPref.userType, UserTypeEnum.doctor.value);
 
-      // Add User to Firestore
       var doctorData = DoctorModel(
         name: params.name,
         email: params.email,
@@ -91,9 +87,7 @@ class AuthRepo {
       await user?.updateDisplayName(params.name);
       await user?.updatePhotoURL(UserTypeEnum.patient.value);
       await SharedPref.cacheUserId(user?.uid ?? '');
-      await SharedPref.cacheData(SharedPref.userType, UserTypeEnum.patient.value);
 
-      // 4) Add User to Firestore
       var patientData = PatientModel(
         name: params.name,
         email: params.email,
@@ -120,17 +114,11 @@ class AuthRepo {
     DoctorModel doctor,
   ) async {
     try {
-      doctor.image = await uploadImageToCloudinary(doctor.imageFile!) ?? '';
+      doctor.imageUrl = await uploadImageToCloudinary(doctor.image!) ?? '';
       await FirebaseProvider.updateDoctor(doctor);
       return right(unit);
     } catch (e) {
       return left(Failure(message: 'حدث خطأ'));
     }
   }
-
-  static Future<void> logout() async {
-    await FirebaseAuth.instance.signOut();
-    await SharedPref.clear();
-  }
 }
-

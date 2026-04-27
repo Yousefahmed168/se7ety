@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:se7ety/core/constants/specialization_data.dart';
+import 'package:se7ety/features/auth/data/model/specializations.dart';
 
 const Color skyBlue = Color(0xff71b4fb);
 const Color lightBlue = Color(0xff7fbcfb);
@@ -22,50 +22,15 @@ class CardModel {
 }
 
 List<CardModel> cards = [
-  CardModel(specializations[0], skyBlue, lightBlue), //القلب
-  CardModel(
-    specializations[1],
-    green,
-    lightGreen,
-  ), //عام
-  CardModel(
-    specializations[2],
-    orange,
-    lightOrange,
-  ), // نساء وتوليد
-  CardModel(
-    specializations[3],
-    purple,
-    purpleLight,
-  ), // باطنه
-  CardModel(
-    specializations[4],
-    green,
-    lightGreen,
-  ), // تجميل وترميم
-  CardModel(
-    specializations[5],
-    skyBlue,
-    lightBlue,
-  ), //  اسنان
-  CardModel(
-    specializations[6],
-    green,
-    lightGreen,
-  ), //  انف اذن
-  CardModel(
-    specializations[7],
-    orange,
-    lightOrange,
-  ), // عيون
-  CardModel(
-    specializations[8],
-    purple,
-    purpleLight,
-  ), //  عظام
-  CardModel(
-    specializations[9],
-    green,
-    lightGreen,
-  ), // اطفال
+  CardModel(specializations[0], skyBlue, lightBlue),
+  CardModel(specializations[1], green, lightGreen),
+  CardModel(specializations[2], orange, lightOrange),
+  CardModel(specializations[3], purple, purpleLight),
+  CardModel(specializations[4], green, lightGreen),
+  CardModel(specializations[5], skyBlue, lightBlue),
+  CardModel(specializations[6], green, lightGreen),
+  CardModel(specializations[7], orange, lightOrange),
+  CardModel(specializations[8], purple, purpleLight),
+  CardModel(specializations[9], green, lightGreen),
+  CardModel(specializations[10], skyBlue, lightBlue),
 ];

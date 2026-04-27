@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import '../../../../core/utils/colors.dart';
-import '../../../../core/utils/text_styles.dart';
+import 'package:se7ety/core/utils/colors.dart';
+import 'package:se7ety/core/utils/text_styles.dart';
 
 class SocialLogin extends StatelessWidget {
   const SocialLogin({super.key});
@@ -31,10 +31,7 @@ class SocialLogin extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            OutlinedButton(
-              onPressed: () {},
-              child: const Text('Google'),
-            ),
+            OutlinedButton(onPressed: () {}, child: const Text('Google')),
           ],
         ),
       ],

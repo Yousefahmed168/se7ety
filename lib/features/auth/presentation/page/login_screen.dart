@@ -40,9 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
         } else if (state is AuthSuccessState) {
           if (state.userType == UserTypeEnum.patient) {
             pushToBase(context, Routes.patientMainApp);
-          } else {
-            pushToBase(context, Routes.doctorMainApp);
-          }
+          } else {}
         } else if (state is AuthErrorState) {
           pop(context);
           showMyDialog(context, state.error);

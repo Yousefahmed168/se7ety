@@ -5,7 +5,7 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 
 Future<String?> uploadImageToCloudinary(File imageFile) async {
-  String cloudName = 'dup0vzih4';
+  String cloudName = 'dtpohlifc';
 
   final url = Uri.parse(
     'https://api.cloudinary.com/v1_1/$cloudName/image/upload',

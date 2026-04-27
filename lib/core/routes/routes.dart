@@ -9,7 +9,6 @@ class Routes {
   static String register = '/register';
   static String welcome = '/welcome';
   static String patientMainApp = '/patientMainApp';
-  static String patientHomeView = '/patientHomeView';
-  static String doctorMainApp = '/doctorMainApp';
   static String doctorUpdateProfile = '/doctorUpdateProfile';
+  static String specializationSearch = '/specializationSearch';
 }

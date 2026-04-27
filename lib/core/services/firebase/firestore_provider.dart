@@ -34,6 +34,16 @@ class FirebaseProvider {
         .orderBy("rating", descending: true)
         .get();
   }
+   static Future<QuerySnapshot> filterDoctorsBySpecialization(
+    String specialization,
+  ) {
+    return doctorCollection
+        .where("specialization", isEqualTo: specialization)
+        .get();
+  }
+   static Future<QuerySnapshot> searchDoctorsByName(String searchKey) {
+    return doctorCollection.orderBy("name").startAt([searchKey]).endAt([
+      '$searchKey\uf8ff',
+    ]).get();
+  }
 }
-
-

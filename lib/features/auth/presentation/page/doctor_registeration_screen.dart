@@ -6,13 +6,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:se7ety/core/constants/app_images.dart';
-import 'package:se7ety/core/constants/specialization_data.dart';
 import 'package:se7ety/core/routes/navigations.dart';
 import 'package:se7ety/core/utils/colors.dart';
 import 'package:se7ety/core/utils/text_styles.dart';
 import 'package:se7ety/core/widgets/custom_text_form_field.dart';
 import 'package:se7ety/core/widgets/dialogs.dart';
 import 'package:se7ety/core/widgets/main_button.dart';
+import 'package:se7ety/features/auth/data/model/specializations.dart';
 import 'package:se7ety/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:se7ety/features/auth/presentation/cubit/auth_state.dart';
 
@@ -72,7 +72,6 @@ class _UpdateDoctorProfileScreenState extends State<UpdateDoctorProfileScreen> {
                         children: [
                           CircleAvatar(
                             radius: 50,
-                            // backgroundColor: AppColors.lightBg,
                             child: CircleAvatar(
                               radius: 60,
                               backgroundColor: AppColors.whiteColor,
@@ -93,7 +92,6 @@ class _UpdateDoctorProfileScreenState extends State<UpdateDoctorProfileScreen> {
                               child: const Icon(
                                 Icons.camera_alt_rounded,
                                 size: 20,
-                                // color: AppColors.primaryColor,
                               ),
                             ),
                           ),

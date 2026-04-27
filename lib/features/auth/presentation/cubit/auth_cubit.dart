@@ -86,7 +86,7 @@ class AuthCubit extends Cubit<AuthState> {
       address: addressController.text,
       specialization: specialization,
       uid: SharedPref.getUserId(),
-      imageFile: imageFile,
+      image: imageFile,
     );
     var data = await AuthRepo.updateDoctorProfile(doctor);
     data.fold(
@@ -97,10 +97,5 @@ class AuthCubit extends Cubit<AuthState> {
         emit(AuthSuccessState());
       },
     );
-  }
-
-  Future<void> logout() async {
-    await AuthRepo.logout();
-    emit(AuthInitialState());
   }
 }

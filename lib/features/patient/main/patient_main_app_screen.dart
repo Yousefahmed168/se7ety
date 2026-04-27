@@ -3,6 +3,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:se7ety/core/utils/colors.dart';
 import 'package:se7ety/core/utils/text_styles.dart';
 import 'package:se7ety/features/patient/home/presentation/page/home_screen.dart';
+import 'package:se7ety/features/patient/search/views/patient_search.dart';
 
 class PatientMainAppScreen extends StatefulWidget {
   const PatientMainAppScreen({super.key});
@@ -22,18 +23,20 @@ class _MainPageState extends State<PatientMainAppScreen> {
       PatientHomeScreen(
         onSearch: () {
           setState(() {
-            _selectedIndex = 1;
+            _selectedIndex = _selectedIndex;
           });
         },
       ),
-     
+      const SearchScreen(),
+      const MyAppointmentsScreen(),
+      const PatientProfileScreen(),
     ];
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[0],
+      body: _pages[_selectedIndex],
       bottomNavigationBar: Container(
         padding: const EdgeInsets.fromLTRB(10, 10, 10, 20),
         decoration: BoxDecoration(
@@ -80,5 +83,23 @@ class _MainPageState extends State<PatientMainAppScreen> {
         ),
       ),
     );
+  }
+}
+
+class PatientProfileScreen extends StatelessWidget {
+  const PatientProfileScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(child: Text('الحساب'));
+  }
+}
+
+class MyAppointmentsScreen extends StatelessWidget {
+  const MyAppointmentsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(child: Text('المواعيد'));
   }
 }

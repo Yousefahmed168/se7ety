@@ -29,7 +29,7 @@ class DoctorCard extends StatelessWidget {
       child: InkWell(
         onTap: () {
           if (isClickable) {
-            // pushTo(context, DoctorProfile(doctorModel: doctor));
+            // pushTo(context, Routes.doctorProfile, extra: doctor);
           }
         },
         child: Row(
@@ -45,7 +45,7 @@ class DoctorCard extends StatelessWidget {
                   color: AppColors.whiteColor,
                 ),
                 child: Image.network(
-                  doctor.image ?? '',
+                  doctor.imageUrl ?? '',
                   height: 50,
                   width: 50,
                   fit: BoxFit.contain,
@@ -64,10 +64,7 @@ class DoctorCard extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: TextStyles.title.copyWith(fontSize: 16),
                   ),
-                  Text(
-                    doctor.specialization ?? '',
-                    style: TextStyles.body.copyWith(),
-                  ),
+                  Text(doctor.specialization ?? '', style: TextStyles.body),
                 ],
               ),
             ),
@@ -75,10 +72,7 @@ class DoctorCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text(
-                  doctor.rating.toString(),
-                  style: TextStyles.body.copyWith(),
-                ),
+                Text(doctor.rating.toString(), style: TextStyles.body),
                 const SizedBox(width: 3),
                 const Icon(
                   Icons.star_rate_rounded,

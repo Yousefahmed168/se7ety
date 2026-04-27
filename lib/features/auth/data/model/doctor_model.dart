@@ -3,8 +3,8 @@ import 'dart:io';
 class DoctorModel {
   String? uid;
   String? name;
-  String? image;      // remote URL (Cloudinary)
-  File? imageFile;    // local file (before upload)
+  File? image;
+  String? imageUrl;
   String? specialization;
   int? rating;
   String? email;
@@ -18,7 +18,7 @@ class DoctorModel {
   DoctorModel({
     this.name,
     this.image,
-    this.imageFile,
+    this.imageUrl,
     this.specialization,
     this.rating,
     this.email,
@@ -33,7 +33,7 @@ class DoctorModel {
 
   DoctorModel.fromJson(Map<String, dynamic> json) {
     name = json['name'];
-    image = json['image'];
+    imageUrl = json['image'];
     specialization = json['specialization'];
     rating = json['rating'];
     email = json['email'];
@@ -49,7 +49,7 @@ class DoctorModel {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['name'] = name;
-    data['image'] = image;
+    data['image'] = imageUrl;
     data['specialization'] = specialization;
     data['rating'] = rating;
     data['email'] = email;
@@ -66,7 +66,7 @@ class DoctorModel {
   Map<String, dynamic> toUpdateData() {
     final Map<String, dynamic> data = <String, dynamic>{};
     if (name != null) data['name'] = name;
-    if (image != null) data['image'] = image;
+    if (imageUrl != null) data['image'] = imageUrl;
     if (specialization != null) data['specialization'] = specialization;
     if (rating != null) data['rating'] = rating;
     if (email != null) data['email'] = email;

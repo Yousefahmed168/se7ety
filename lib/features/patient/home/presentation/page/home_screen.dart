@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:se7ety/core/routes/navigations.dart';
-import 'package:se7ety/core/routes/routes.dart';
-import 'package:se7ety/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:se7ety/core/services/firebase/firestore_provider.dart';
 import 'package:se7ety/core/utils/colors.dart';
 import 'package:se7ety/core/utils/text_styles.dart';
@@ -27,13 +23,6 @@ class _HomePageState extends State<PatientHomeScreen> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          IconButton(
-            onPressed: () {
-              context.read<AuthCubit>().logout();
-              pushReplacement(context, Routes.welcome);
-            },
-            icon: const Icon(Icons.logout_rounded, color: AppColors.primaryColor),
-          ),
           Padding(
             padding: const EdgeInsets.only(left: 10),
             child: IconButton(
@@ -129,7 +118,7 @@ class _HomePageState extends State<PatientHomeScreen> {
           hintText: 'ابحث عن دكتور',
           suffixIcon: Container(
             decoration: BoxDecoration(
-              color: AppColors.primaryColor.withValues(alpha: 0.9),
+              color: AppColors.primaryColor.withValues(alpha:0.9),
               borderRadius: BorderRadius.circular(17),
             ),
             child: IconButton(

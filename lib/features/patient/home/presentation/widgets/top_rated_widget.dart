@@ -1,15 +1,16 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:se7ety/core/services/firebase/firestore_provider.dart';
 import 'package:se7ety/core/widgets/cards/doctor_card.dart';
 import 'package:se7ety/features/auth/data/model/doctor_model.dart';
-
-
 
 class TopRatedList extends StatefulWidget {
   const TopRatedList({super.key});
 
   @override
-  _TopRatedListState createState() => _TopRatedListState();
+  State<TopRatedList> createState() => _TopRatedListState();
 }
 
 class _TopRatedListState extends State<TopRatedList> {
@@ -17,11 +18,9 @@ class _TopRatedListState extends State<TopRatedList> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: FutureBuilder(
-        future: FirebaseFirestore.instance
-            .collection('doctors')
-            .orderBy('rating', descending: true)
-            .get(),
+        future: FirebaseProvider.sortingDoctors(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          log(snapshot.error.toString());
           if (!snapshot.hasData) {
             return const Center(
               child: CircularProgressIndicator(
@@ -31,20 +30,18 @@ class _TopRatedListState extends State<TopRatedList> {
             );
           } else {
             return ListView.builder(
-              scrollDirection: Axis.vertical,
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
-              itemCount: snapshot.data!.docs.length,
+              itemCount: snapshot
+                  .data
+                  ?.docs
+                  .length, // all doctors in firebase (has full data)
               itemBuilder: (context, index) {
                 DoctorModel doctor = DoctorModel.fromJson(
-                  snapshot.data!.docs[index].data() as Map<String, dynamic>,
+                  snapshot.data?.docs[index].data() as Map<String, dynamic>,
                 );
-                if (doctor.specialization == '') {
-                  return const SizedBox();
-                }
-                return DoctorCard(
-                  doctor: doctor,
-                );
+
+                return DoctorCard(doctor: doctor);
               },
             );
           }
