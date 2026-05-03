@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:se7ety/core/routes/app_router.dart';
-import 'package:se7ety/core/utils/themes.dart';
+import 'core/routes/app_router.dart';
+import 'core/utils/themes.dart';
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
@@ -16,8 +16,14 @@ class MainApp extends StatelessWidget {
       supportedLocales: context.supportedLocales,
       localizationsDelegates: context.localizationDelegates,
       debugShowCheckedModeBanner: false,
-      builder: (_, child) =>
-          SafeArea(top: false, bottom: Platform.isAndroid, child: child!),
+      builder: (_, child) => SafeArea(
+        top: false,
+        bottom: Platform.isAndroid,
+        child: GestureDetector(
+          onTap: () => FocusScope.of(context).unfocus(),
+          child: child!,
+        ),
+      ),
       theme: AppThemes.lightTheme,
     );
   }

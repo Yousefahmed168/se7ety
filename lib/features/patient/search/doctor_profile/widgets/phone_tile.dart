@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:se7ety/core/utils/colors.dart';
+
+import '../../../../../core/utils/colors.dart';
 
 class IconTile extends StatelessWidget {
+  final IconData imgAssetPath;
+  final Color backColor;
+  final void Function()? onTap;
+  final String num;
   const IconTile({
     super.key,
     required this.imgAssetPath,
     required this.backColor,
     this.onTap,
-    required this.text,
+    required this.num,
   });
-  final IconData imgAssetPath;
-  final Color backColor;
-  final void Function()? onTap;
-  final String text;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        margin: const EdgeInsets.only(right: 16),
         height: 45,
         width: 45,
         decoration: BoxDecoration(
@@ -28,7 +30,7 @@ class IconTile extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(text),
+            Text(num),
             Icon(imgAssetPath, color: AppColors.darkColor),
           ],
         ),

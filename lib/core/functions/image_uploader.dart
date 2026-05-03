@@ -15,12 +15,7 @@ Future<String?> uploadImageToCloudinary(File imageFile) async {
 
   request.fields['upload_preset'] = "se7ety";
 
-  request.files.add(
-    await http.MultipartFile.fromPath(
-      'file', 
-      imageFile.path,
-    ),
-  );
+  request.files.add(await http.MultipartFile.fromPath('file', imageFile.path));
 
   try {
     final response = await request.send();

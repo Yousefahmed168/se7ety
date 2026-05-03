@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:se7ety/core/constants/app_images.dart';
-import 'package:se7ety/core/routes/navigations.dart';
-import 'package:se7ety/core/routes/routes.dart';
-import 'package:se7ety/core/utils/colors.dart';
-import 'package:se7ety/core/utils/text_styles.dart';
-import 'package:se7ety/core/widgets/custom_svg_picture.dart';
-import 'package:se7ety/features/patient/home/data/card.dart';
+import '../../../../../core/constants/app_images.dart';
+import '../../../../../core/routes/navigations.dart';
+import '../../../../../core/routes/routes.dart';
+import '../../../../../core/utils/colors.dart';
+import '../../../../../core/utils/text_styles.dart';
+import '../../../../../core/widgets/custom_svg_picture.dart';
+import '../../data/card.dart';
 
 class SpecialistsBanner extends StatelessWidget {
   const SpecialistsBanner({super.key});

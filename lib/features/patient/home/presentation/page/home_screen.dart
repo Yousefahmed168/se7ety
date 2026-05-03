@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:se7ety/core/services/firebase/firestore_provider.dart';
-import 'package:se7ety/core/utils/colors.dart';
-import 'package:se7ety/core/utils/text_styles.dart';
-import 'package:se7ety/features/patient/home/presentation/widgets/specialists_widget.dart';
-import 'package:se7ety/features/patient/home/presentation/widgets/top_rated_widget.dart';
+
+import '../../../../../core/routes/navigations.dart';
+import '../../../../../core/routes/routes.dart';
+import '../../../../../core/services/firebase/firestore_provider.dart';
+import '../../../../../core/utils/colors.dart';
+import '../../../../../core/utils/text_styles.dart';
+import '../widgets/specialists_widget.dart';
+import '../widgets/top_rated_widget.dart';
 
 class PatientHomeScreen extends StatefulWidget {
   const PatientHomeScreen({super.key, required this.onSearch});
@@ -133,11 +136,11 @@ class _HomePageState extends State<PatientHomeScreen> {
         style: TextStyles.body,
         onFieldSubmitted: (String value) {
           if (_doctorName.text.isNotEmpty) {
-            // pushTo(
-            //   context,
-            //   Routes.homeSearch,
-            //   extra: _doctorName.text,
-            // );
+            pushTo(
+              context,
+              Routes.specializationSearch,
+              extra: _doctorName.text,
+            );
           }
         },
       ),

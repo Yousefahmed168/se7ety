@@ -1,13 +1,13 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:se7ety/core/constants/user_type_enum.dart';
-import 'package:se7ety/core/functions/image_uploader.dart';
-import 'package:se7ety/core/services/firebase/failure/failure.dart';
-import 'package:se7ety/core/services/firebase/firestore_provider.dart';
-import 'package:se7ety/core/services/local/shared_pref.dart';
-import 'package:se7ety/features/auth/data/model/auth_params.dart';
-import 'package:se7ety/features/auth/data/model/doctor_model.dart';
-import 'package:se7ety/features/auth/data/model/patient_model.dart';
+import '../../../../core/constants/user_type_enum.dart';
+import '../../../../core/functions/image_uploader.dart';
+import '../../../../core/services/firebase/failure/failure.dart';
+import '../../../../core/services/firebase/firestore_provider.dart';
+import '../../../../core/services/local/shared_pref.dart';
+import '../model/auth_params.dart';
+import '../model/doctor_model.dart';
+import '../model/patient_model.dart';
 
 class AuthRepo {
   static Future<Either<Failure, UserTypeEnum>> login(AuthParams params) async {

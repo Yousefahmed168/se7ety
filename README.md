@@ -1,9 +1,9 @@
-# 📚 se7ety — Modern Flutter Pharmacy App
+# 📚 se7ety — Modern Flutter Healthcare App
 
 ![Flutter](https://img.shields.io/badge/Flutter-3.x-blue?logo=flutter)
 ![Dart](https://img.shields.io/badge/Dart-3.x-blue?logo=dart)
 
-**se7ety** is a premium Pharmacy application built with **Flutter**, featuring a sleek modern design, robust feature-based architecture, and full backend integration. This project demonstrates advanced Flutter concepts.
+**se7ety** (My Health) is a premium Healthcare & Doctor Appointment application built with **Flutter**, featuring a sleek modern design, robust feature-based architecture, and full backend integration via Firebase.
 
 ---
 
@@ -11,51 +11,71 @@
 
 ### 🔐 Authentication Flow
 - **Onboarding:** Professionally designed Splash and Welcome screens.
-- **Login/Register:** Complete with validation, social auth buttons.
+- **Login/Register:** Complete with validation, role-based routing (Doctor vs. Patient), and Firebase Authentication.
 
 ---
 
 ## 📱 Screenshots Preview
 
-### 🔹 Splash 
+### 🔹 Splash & Welcome
 | Splash | Welcome |
 |:---:|:---:|
 | <img src="assets\screenshots\splash.png" width="180"/> | <img src="assets\screenshots\welcome.png" width="180"/> |
 
 ### 🔹 Onboarding 
-| on1 | on2 | on3 |
+| Step 1 | Step 2 | Step 3 |
 |:---:|:---:|:---:|
 | <img src="assets\screenshots\on1.png" width="180"/> | <img src="assets\screenshots\on2.png" width="180"/> | <img src="assets\screenshots\on3.png" width="180"/> |
 
 
 ### 🔹 Authentication
-| login doctor | Register doctor | Login patient | Register patient |
+| Login Doctor | Register Doctor | Login Patient | Register Patient |
 |:---:|:---:|:---:|:---:|
 | <img src="assets\screenshots\login_doctor.png" width="180"/> | <img src="assets\screenshots\register_doctor.png" width="180"/> | <img src="assets\screenshots\login_patient.png" width="180"/> | <img src="assets\screenshots\register_patient.png" width="180"/> |
 
-### 🔹Patient Home
-| home screen | specialization | Search by name |
-|:---:|:---:|:---:|
-| <img src="assets\screenshots\home_screen.png" width="180"/> | <img src="assets\screenshots\specialization.png" width="180"/> | <img src="assets\screenshots\search_doctor.png" width="180"/> |
+### 🔹 Patient Home
+| Home Screen | Specializations | Search by Name | Appointments |
+|:---:|:---:|:---:|:---:|
+| <img src="assets\screenshots\home_screen.png" width="180"/> | <img src="assets\screenshots\specialization.png" width="180"/> | <img src="assets\screenshots\search_doctor.png" width="180"/> | <img src="assets\screenshots\appoiment_patient.png" width="180"/> | 
 
-### 🔹Doctor Home
-| update profile doctor |
+### 🔹 Appointment Details
+| Details | Date Selection |
 |:---:|:---:|
-| <img src="assets\screenshots\update_profile.png" width="180"/> |
+| <img src="assets\screenshots\doctor_appoiment.png" width="180"/> | <img src="assets\screenshots\date.png" width="180"/> |
+
+### 🔹 Patient Profile
+| Patient Profile | Patient Info |
+|:---:|:---:|
+| <img src="assets\screenshots\patient_profile.png" width="180"/> | <img src="assets\screenshots\patient_info.png" width="180"/> |
+
+### 🔹 Doctor Home
+| Update Profile | Appointments | Doctor Profile | Doctor Details |
+|:---:|:---:|:---:|:---:|
+| <img src="assets\screenshots\update_profile.png" width="180"/> | <img src="assets\screenshots\doctor_appoiments.png" width="180"/> | <img src="assets\screenshots\doctor_profile.png" width="180"/> | <img src="assets\screenshots\doctor_details.png" width="180"/> |
+
+---
 
 ## 🛠 Tech Stack & Packages
 
-- **Core:** [Flutter SDK](https://flutter.dev) (3.x), [GoRouter](https://pub.dev/packages/go_router) for deep-linkable routing.
-- **Local Storage:** [SharedPreferences](https://pub.dev/packages/shared_preferences) for token and locale persistence.
+- **Core Framework:** [Flutter SDK](https://flutter.dev) (3.x) & Dart.
+- **State Management:** [flutter_bloc](https://pub.dev/packages/flutter_bloc) for predictable state management.
+- **Backend Infrastructure:** 
+  - [Firebase Auth](https://pub.dev/packages/firebase_auth) for user authentication.
+  - [Cloud Firestore](https://pub.dev/packages/cloud_firestore) for real-time NoSQL database logic.
+- **Navigation:** [GoRouter](https://pub.dev/packages/go_router) for deep-linkable, declarative routing.
+- **Local Storage:** [SharedPreferences](https://pub.dev/packages/shared_preferences) for token and role persistence.
+- **UI Elements:** [google_nav_bar](https://pub.dev/packages/google_nav_bar), [smooth_page_indicator](https://pub.dev/packages/smooth_page_indicator), [shimmer](https://pub.dev/packages/shimmer), [lottie](https://pub.dev/packages/lottie), and custom SVGs via [flutter_svg](https://pub.dev/packages/flutter_svg).
+- **Media & Assets:** [image_picker](https://pub.dev/packages/image_picker) integrated with [Cloudinary API](https://pub.dev/packages/cloudinary_api) for robust image uploads.
+- **Localization:** [easy_localization](https://pub.dev/packages/easy_localization) for multilingual support.
 
-
+---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Flutter SDK (3.10.8)
+- Flutter SDK (3.10.8 or newer)
 - Android Studio / VS Code
-- Stable Internet Connection for API calls
+- Stable Internet Connection for Firebase backend.
 
 ### Installation
 1. **Clone the repo:**
@@ -77,8 +97,6 @@
 
 **Yousef Ahmed**  
 *Flutter Developer*
-
-
 
 ### 📬 Contact & Collaboration
 

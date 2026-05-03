@@ -1,4 +1,4 @@
-import 'package:se7ety/core/constants/user_type_enum.dart';
+import '../../../../core/constants/user_type_enum.dart';
 
 class AuthState {}
 

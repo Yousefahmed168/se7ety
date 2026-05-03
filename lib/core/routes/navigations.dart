@@ -5,12 +5,12 @@ void pushReplacement(BuildContext context, String route, {Object? extra}) {
   return context.pushReplacement(route, extra: extra);
 }
 
-Future pushTo(BuildContext context, String route, {Object? extra}) {
-  return context.push(route, extra: extra);
+void pushTo(BuildContext context, String route, {Object? extra}) {
+  context.push(route, extra: extra);
 }
 
 void pushToBase(BuildContext context, String route, {Object? extra}) {
-  return context.go(route, extra: extra);
+  context.go(route, extra: extra);
 }
 
 void pop(BuildContext context) {

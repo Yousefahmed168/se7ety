@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:se7ety/core/utils/colors.dart';
-import 'package:se7ety/core/utils/text_styles.dart';
+import '../../../../../core/utils/colors.dart';
+import '../../../../../core/utils/text_styles.dart';
 
 class TileWidget extends StatelessWidget {
   const TileWidget({super.key, required this.text, required this.icon});
@@ -17,7 +17,7 @@ class TileWidget extends StatelessWidget {
           child: Container(
             height: 27,
             width: 27,
-            color: AppColors.appBarColor,
+            color: AppColors.primaryColor,
             child: Icon(icon, color: Colors.white, size: 16),
           ),
         ),

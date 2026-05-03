@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:se7ety/core/constants/user_type_enum.dart';
-import 'package:se7ety/core/functions/validations.dart';
-import 'package:se7ety/core/routes/navigations.dart';
-import 'package:se7ety/core/routes/routes.dart';
-import 'package:se7ety/core/utils/colors.dart';
-import 'package:se7ety/core/utils/text_styles.dart';
-import 'package:se7ety/core/widgets/custom_text_form_field.dart';
-import 'package:se7ety/core/widgets/dialogs.dart';
-import 'package:se7ety/core/widgets/main_button.dart';
-import 'package:se7ety/core/widgets/password_text_form_field.dart';
-import 'package:se7ety/features/auth/presentation/cubit/auth_cubit.dart';
-import 'package:se7ety/features/auth/presentation/cubit/auth_state.dart';
+import '../../../../core/constants/user_type_enum.dart';
+import '../../../../core/functions/validations.dart';
+import '../../../../core/routes/navigations.dart';
+import '../../../../core/routes/routes.dart';
+import '../../../../core/utils/colors.dart';
+import '../../../../core/utils/text_styles.dart';
+import '../../../../core/widgets/custom_text_form_field.dart';
+import '../../../../core/widgets/dialogs.dart';
+import '../../../../core/widgets/main_button.dart';
+import '../../../../core/widgets/password_text_form_field.dart';
+import '../cubit/auth_cubit.dart';
+import '../cubit/auth_state.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key, required this.userType});
@@ -93,7 +93,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   keyboardType: TextInputType.emailAddress,
                   textAlign: TextAlign.end,
                   controller: cubit.emailController,
-                  hintText: 'Sayed@example.com',
+                  hintText: 'name@example.com',
                   prefixIcon: Icon(Icons.email_rounded),
                   textInputAction: TextInputAction.next,
                   validator: (value) {

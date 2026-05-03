@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:se7ety/core/utils/colors.dart';
-import 'package:se7ety/core/utils/text_styles.dart';
-import 'package:se7ety/features/auth/data/model/doctor_model.dart';
+
+import '../../../features/auth/data/model/doctor_model.dart';
+import '../../routes/navigations.dart';
+import '../../routes/routes.dart';
+import '../../utils/colors.dart';
+import '../../utils/text_styles.dart';
 
 class DoctorCard extends StatelessWidget {
   const DoctorCard({super.key, required this.doctor, this.isClickable = true});
@@ -29,7 +32,7 @@ class DoctorCard extends StatelessWidget {
       child: InkWell(
         onTap: () {
           if (isClickable) {
-            // pushTo(context, Routes.doctorProfile, extra: doctor);
+            pushTo(context, Routes.doctorProfile, extra: doctor);
           }
         },
         child: Row(
@@ -44,12 +47,27 @@ class DoctorCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                   color: AppColors.whiteColor,
                 ),
-                child: Image.network(
-                  doctor.imageUrl ?? '',
-                  height: 50,
-                  width: 50,
-                  fit: BoxFit.contain,
-                ),
+                child: (doctor.imageUrl != null && doctor.imageUrl!.isNotEmpty)
+                    ? Image.network(
+                        doctor.imageUrl!,
+                        height: 50,
+                        width: 50,
+                        fit: BoxFit.cover,
+                        errorBuilder: (context, error, stackTrace) {
+                          return Image.asset(
+                            'assets/images/doc.png',
+                            height: 50,
+                            width: 50,
+                            fit: BoxFit.cover,
+                          );
+                        },
+                      )
+                    : Image.asset(
+                        'assets/images/doc.png',
+                        height: 50,
+                        width: 50,
+                        fit: BoxFit.cover,
+                      ),
               ),
             ),
             const SizedBox(width: 20),

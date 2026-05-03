@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:se7ety/core/constants/app_images.dart';
-import 'package:se7ety/core/routes/navigations.dart';
-import 'package:se7ety/core/routes/routes.dart';
-import 'package:se7ety/core/services/local/shared_pref.dart';
+import '../../../core/constants/app_images.dart';
+import '../../../core/constants/user_type_enum.dart';
+import '../../../core/routes/navigations.dart';
+import '../../../core/routes/routes.dart';
+import '../../../core/services/local/shared_pref.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -18,8 +20,15 @@ class _SplashScreenState extends State<SplashScreen> {
     bool isOnboardingShown = SharedPref.isOnboardingShown();
     bool isLoggedIn = SharedPref.getUserId().isNotEmpty == true;
     Future.delayed(const Duration(seconds: 3)).then((value) {
+      if (!mounted) return;
       if (isLoggedIn) {
-        pushReplacement(context, Routes.patientMainApp);
+        final user = FirebaseAuth.instance.currentUser;
+        final userType = UserTypeEnum.fromString(user?.photoURL ?? '');
+        if (userType == UserTypeEnum.doctor) {
+          pushReplacement(context, Routes.doctorMainApp);
+        } else {
+          pushReplacement(context, Routes.patientMainApp);
+        }
       } else {
         if (isOnboardingShown) {
           pushReplacement(context, Routes.welcome);

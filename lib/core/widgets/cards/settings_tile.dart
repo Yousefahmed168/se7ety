@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:se7ety/core/utils/colors.dart';
-import 'package:se7ety/core/utils/text_styles.dart';
+import '../../utils/colors.dart';
+import '../../utils/text_styles.dart';
 
 class SettingsListItem extends StatelessWidget {
   final IconData icon;

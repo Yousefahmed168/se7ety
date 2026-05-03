@@ -1,20 +1,20 @@
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:se7ety/core/constants/app_images.dart';
-import 'package:se7ety/core/routes/navigations.dart';
-import 'package:se7ety/core/utils/colors.dart';
-import 'package:se7ety/core/utils/text_styles.dart';
-import 'package:se7ety/core/widgets/custom_text_form_field.dart';
-import 'package:se7ety/core/widgets/dialogs.dart';
-import 'package:se7ety/core/widgets/main_button.dart';
-import 'package:se7ety/features/auth/data/model/specializations.dart';
-import 'package:se7ety/features/auth/presentation/cubit/auth_cubit.dart';
-import 'package:se7ety/features/auth/presentation/cubit/auth_state.dart';
+import '../../../../core/constants/app_images.dart';
+import '../../../../core/routes/navigations.dart';
+import '../../../../core/routes/routes.dart';
+import '../../../../core/utils/colors.dart';
+import '../../../../core/utils/text_styles.dart';
+import '../../../../core/widgets/custom_text_form_field.dart';
+import '../../../../core/widgets/dialogs.dart';
+import '../../../../core/widgets/main_button.dart';
+import '../../data/model/specializations.dart';
+import '../cubit/auth_cubit.dart';
+import '../cubit/auth_state.dart';
 
 class UpdateDoctorProfileScreen extends StatefulWidget {
   const UpdateDoctorProfileScreen({super.key});
@@ -50,7 +50,7 @@ class _UpdateDoctorProfileScreenState extends State<UpdateDoctorProfileScreen> {
           showLoadingDialog(context);
         } else if (state is AuthSuccessState) {
           pop(context);
-          log('success');
+          pushToBase(context, Routes.doctorMainApp);
         } else if (state is AuthErrorState) {
           pop(context);
           showMyDialog(context, state.error);

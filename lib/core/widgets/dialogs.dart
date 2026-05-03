@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:lottie/lottie.dart';
-import 'package:se7ety/core/constants/app_images.dart';
-import 'package:se7ety/core/utils/colors.dart';
+
+import '../constants/app_images.dart';
+import '../utils/colors.dart';
 
 enum DialogType { success, error }
 

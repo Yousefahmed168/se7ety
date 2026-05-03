@@ -2,9 +2,9 @@ import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:se7ety/core/services/firebase/firestore_provider.dart';
-import 'package:se7ety/core/widgets/cards/doctor_card.dart';
-import 'package:se7ety/features/auth/data/model/doctor_model.dart';
+import '../../../../../core/services/firebase/firestore_provider.dart';
+import '../../../../../core/widgets/cards/doctor_card.dart';
+import '../../../../auth/data/model/doctor_model.dart';
 
 class TopRatedList extends StatefulWidget {
   const TopRatedList({super.key});

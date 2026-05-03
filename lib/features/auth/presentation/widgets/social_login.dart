@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:se7ety/core/utils/colors.dart';
-import 'package:se7ety/core/utils/text_styles.dart';
+
+import '../../../../core/utils/colors.dart';
+import '../../../../core/utils/text_styles.dart';
 
 class SocialLogin extends StatelessWidget {
   const SocialLogin({super.key});

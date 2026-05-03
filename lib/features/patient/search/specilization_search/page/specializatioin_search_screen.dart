@@ -1,15 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:se7ety/core/services/firebase/firestore_provider.dart';
-import 'package:se7ety/core/utils/colors.dart';
-import 'package:se7ety/core/utils/text_styles.dart';
-import 'package:se7ety/core/widgets/cards/doctor_card.dart';
-import 'package:se7ety/features/auth/data/model/doctor_model.dart';
+import '../../../../../core/services/firebase/firestore_provider.dart';
+import '../../../../../core/utils/colors.dart';
+import '../../../../../core/utils/text_styles.dart';
+import '../../../../../core/widgets/cards/doctor_card.dart';
+import '../../../../auth/data/model/doctor_model.dart';
 
-class HomeSearchScreen extends StatelessWidget {
-  final String searchKey;
-  const HomeSearchScreen({super.key, required this.searchKey});
+class SpecializationSearchScreen extends StatelessWidget {
+  final String specialization;
+  const SpecializationSearchScreen({super.key, required this.specialization});
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +17,10 @@ class HomeSearchScreen extends StatelessWidget {
       appBar: AppBar(
         foregroundColor: AppColors.whiteColor,
         backgroundColor: AppColors.primaryColor,
-        title: Text('ابحث عن دكتور'),
+        title: Text(specialization),
       ),
       body: FutureBuilder(
-        future: FirebaseProvider.searchDoctorsByName(searchKey),
+        future: FirebaseProvider.getDoctorsBySpecialization(specialization),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
@@ -63,7 +63,7 @@ class EmptyWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SvgPicture.asset('assets/images/no-search.svg', width: 250),
-            Text('لا يوجد دكتور بهذا الاسم', style: TextStyles.body),
+            Text('لا يوجد دكتور بهذا التخصص حاليا', style: TextStyles.body),
           ],
         ),
       ),

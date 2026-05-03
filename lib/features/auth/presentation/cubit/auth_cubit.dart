@@ -3,13 +3,14 @@ import 'dart:io';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:se7ety/core/constants/user_type_enum.dart';
-import 'package:se7ety/core/services/firebase/failure/failure.dart';
-import 'package:se7ety/core/services/local/shared_pref.dart';
-import 'package:se7ety/features/auth/data/model/auth_params.dart';
-import 'package:se7ety/features/auth/data/model/doctor_model.dart';
-import 'package:se7ety/features/auth/data/repo/auth_repo.dart';
-import 'package:se7ety/features/auth/presentation/cubit/auth_state.dart';
+
+import '../../../../core/constants/user_type_enum.dart';
+import '../../../../core/services/firebase/failure/failure.dart';
+import '../../../../core/services/local/shared_pref.dart';
+import '../../data/model/auth_params.dart';
+import '../../data/model/doctor_model.dart';
+import '../../data/repo/auth_repo.dart';
+import 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitialState());
