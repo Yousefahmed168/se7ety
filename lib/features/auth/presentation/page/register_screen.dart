@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import '../../../../core/constants/app_images.dart';
 import '../../../../core/constants/user_type_enum.dart';
 import '../../../../core/functions/validations.dart';
 import '../../../../core/routes/navigations.dart';
@@ -67,11 +68,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('assets/images/logo.png', height: 200),
+                Image.asset(AppImages.logo, height: 200),
                 const SizedBox(height: 20),
                 Text(
                   'سجل حساب جديد كـ "${handleUserType()}"',
-                  style: TextStyles.title,
+                  style: TextStyles.title.copyWith(
+                    color: AppColors.primaryColor,
+                  ),
                 ),
                 const SizedBox(height: 30),
                 CustomTextFormField(

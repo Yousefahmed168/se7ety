@@ -106,10 +106,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 Container(
                   alignment: Alignment.centerRight,
-                  padding: const EdgeInsetsDirectional.only(top: 10, start: 10),
-                  child: Text('نسيت كلمة السر ؟', style: TextStyles.small),
+                  padding: const EdgeInsetsDirectional.only(top: 5, start: 10),
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text('نسيت كلمة السر ؟', style: TextStyles.small),
+                  ),
                 ),
-                const Gap(20),
+                const Gap(5),
                 MainButton(
                   onPressed: () async {
                     if (cubit.formKey.currentState!.validate()) {
@@ -118,10 +121,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                   text: "تسجيل الدخول",
                 ),
-                const Gap(30),
+                const Gap(20),
                 SocialLogin(),
                 Padding(
-                  padding: const EdgeInsets.only(top: 30),
+                  padding: const EdgeInsets.only(top: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

@@ -14,21 +14,21 @@ class SocialLogin extends StatelessWidget {
         Row(
           children: [
             const Expanded(
-              child: Divider(color: AppColors.accentColor, thickness: 1),
+              child: Divider(color: AppColors.greyColor, thickness: 1.5),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 5),
               child: Text(
                 'او',
                 style: TextStyles.body.copyWith(color: AppColors.darkColor),
               ),
             ),
             const Expanded(
-              child: Divider(color: AppColors.accentColor, thickness: 1),
+              child: Divider(color: AppColors.greyColor, thickness: 1.5),
             ),
           ],
         ),
-        const Gap(20),
+        const Gap(10),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
